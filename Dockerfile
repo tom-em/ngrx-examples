@@ -12,7 +12,7 @@ FROM base as dependencies
 
 COPY package.json package-lock.json ./
 
-RUN npm install && npm cache clean --force
+RUN npm ci && npm cache clean --force
 
 # Step 3. Run tests
 FROM dependencies as testing
